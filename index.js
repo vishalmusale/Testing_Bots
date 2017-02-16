@@ -26,6 +26,18 @@ app.get('/webhook/', function (req, res) {
     res.send('Error, wrong token')
 })
 
+// handler receiving messages
+app.post('/webhook', function (req, res) {  
+    var events = req.body.entry[0].messaging;
+    for (i = 0; i < events.length; i++) {
+        var event = events[i];
+        if (event.message && event.message.text) {
+            sendMessage(event.sender.id, {text: "Echo: " + event.message.text});
+        }
+    }
+    res.sendStatus(200);
+})
+
 // Spin up the server
 app.listen(app.get('port'), function() {
     console.log('running on port', app.get('port'))
