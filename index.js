@@ -21,7 +21,7 @@ app.get('/', function (req, res) {
 
 // for Facebook verification
 app.get('/webhook/', function (req, res) {
-    if (req.query['hub.verify_token'] === 'shantabai_bot') {
+    if (req.query['hub.verify_token'] === 'shantabai') {
         res.send(req.query['hub.challenge'])
     }
     else {
@@ -60,7 +60,7 @@ app.post('/webhook/', function (req, res) {
  */ 
 
 // Facebook Token
-const token = "EAAGEYA9BANUBAFuhhHrhNQjzz4XamsBZBOWxtr2qZBEDpiPRXyplLsZCE1QAOtFyzZAcz4e18ZBwUJqcNi8UGdKIdf18YD6uBfAFVmyjykWFWvUDaqQ30thkN2yA5jNGkUkQc0sWCDFSGAZC9inztA073DoscBJbEsBdE98apk2AZDZD"
+const token = "EAAGtfX4zApMBAP979CFOmfmfIqbmbi52u8F49FeT2dQsMhBdA7bvqqiQuZCoH6xXxiJXmcmM9tguAcr1mCEZBlnbl4zPMlw1iLuFolvLgeIjkEpp3NLqTA6d7y8U47BHQXy2HWDyekXabYN9S9PDI0YtKZCfS09CdVqTZBhpiwZDZD"
 
 function sendMessage(recipientId, message) {
     messageData = {
