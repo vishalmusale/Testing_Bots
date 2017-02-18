@@ -18,7 +18,6 @@ app.get('/', function (req, res) {
     res.send('Testing Shantabai Bot')
 })
 
-let token = "EAAGEYA9BANUBAG262TNE1QhOrOTPRpIpydxdjm9QnWBcvPoxMQqpMJqwq9Ht3drBjC4KkWn36qdfaEgnGctOP7jiEThC24w6Q2sB8sbQHobffBF6oLqBEfCUzgybGdsDq3WMZBGIKAQYG1ZCacZAdaUkXrC4UMoztkxT3VSOAZDZD"
 
 // for Facebook verification
 app.get('/webhook/', function (req, res) {
@@ -27,6 +26,9 @@ app.get('/webhook/', function (req, res) {
     }
     res.send('Error, wrong token')
 })
+
+// Facebook Token
+let token = "EAAGEYA9BANUBAG262TNE1QhOrOTPRpIpydxdjm9QnWBcvPoxMQqpMJqwq9Ht3drBjC4KkWn36qdfaEgnGctOP7jiEThC24w6Q2sB8sbQHobffBF6oLqBEfCUzgybGdsDq3WMZBGIKAQYG1ZCacZAdaUkXrC4UMoztkxT3VSOAZDZD"
 
 // handler receiving messages
 app.post('/webhook/', function (req, res) {
