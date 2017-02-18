@@ -30,7 +30,7 @@ app.get('/webhook/', function (req, res) {
 })
 
 // Facebook Token
-let token = "EAAGEYA9BANUBAG262TNE1QhOrOTPRpIpydxdjm9QnWBcvPoxMQqpMJqwq9Ht3drBjC4KkWn36qdfaEgnGctOP7jiEThC24w6Q2sB8sbQHobffBF6oLqBEfCUzgybGdsDq3WMZBGIKAQYG1ZCacZAdaUkXrC4UMoztkxT3VSOAZDZD"
+const token = process.env.FB_PAGE_ACCESS_TOKEN
 
 // handler receiving messages
 app.post('/webhook/', function (req, res) {
@@ -76,7 +76,7 @@ app.post('/webhook/', function(req, res) {
 function sendMessage(recipientId, message) {
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token: process.env.PAGE_ACCESS_TOKEN},
+        qs: {access_token: token},
         method: 'POST',
         json: {
             recipient: {id: recipientId},
