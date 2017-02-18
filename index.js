@@ -29,8 +29,6 @@ app.get('/webhook/', function (req, res) {
     }
 })
 
-// Facebook Token
-const token = process.env.FB_PAGE_ACCESS_TOKEN
 
 // handler receiving messages
 app.post('/webhook/', function (req, res) {
@@ -55,40 +53,34 @@ app.post('/webhook/', function (req, res) {
 	}
 	res.sendStatus(200)
 })
-/*
-app.post('/webhook/', function(req, res) {
-	let messaging_events = req.body.entry[0].messaging
-	for (let i = 0; i < messaging_events.length; i++) {
-		let event = messaging_events[i]
-		let sender = event.sender.id
-		if (event.message && event.message.text) {
-			let text = event.message.text
-			sendText(sender, "Text echo: " + text.substring(0, 100))
-		}
-	}
-	res.sendStatus(200)
-})
-*/
+
 
 /**
  *  function to send messages
  */ 
+
+// Facebook Token
+const token = "EAAGEYA9BANUBAFuhhHrhNQjzz4XamsBZBOWxtr2qZBEDpiPRXyplLsZCE1QAOtFyzZAcz4e18ZBwUJqcNi8UGdKIdf18YD6uBfAFVmyjykWFWvUDaqQ30thkN2yA5jNGkUkQc0sWCDFSGAZC9inztA073DoscBJbEsBdE98apk2AZDZD"
+
 function sendMessage(recipientId, message) {
+    messageData = {
+        text:text
+    }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token: token},
+        qs: {access_token:token},
         method: 'POST',
         json: {
-            recipient: {id: recipientId},
-            message: message,
+            recipient: {id:sender},
+            message: messageData,
         }
     }, function(error, response, body) {
         if (error) {
-            console.log('Error sending message: ', error);
+            console.log('Error sending messages: ', error)
         } else if (response.body.error) {
-            console.log('Error: ', response.body.error);
+            console.log('Error: ', response.body.error)
         }
-    });
+    })
 };
 
 // Spin up the server
