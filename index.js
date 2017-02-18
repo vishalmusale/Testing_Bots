@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 
 // Index route
 app.get('/', function (req, res) {
-    res.send('Hello , I am a chat bot')
+    res.send('Testing Shantabai Bot')
 })
 
 // for Facebook verification
@@ -43,7 +43,7 @@ app.post('/webhook/', function (req, res) {
                 sendGenericMessage(sender)
                 continue
             }
-            sendTextMessage(sender, "parrot: " + text.substring(0, 200))
+            sendTextMessage(sender, "ShaantaBai: " + text.substring(0, 200))
         }
         if (event.postback) {
             text = JSON.stringify(event.postback)
