@@ -60,7 +60,7 @@ app.post('/webhook/', function (req, res) {
  */ 
 
 // Facebook Token
-const token = "EAAGtfX4zApMBAP979CFOmfmfIqbmbi52u8F49FeT2dQsMhBdA7bvqqiQuZCoH6xXxiJXmcmM9tguAcr1mCEZBlnbl4zPMlw1iLuFolvLgeIjkEpp3NLqTA6d7y8U47BHQXy2HWDyekXabYN9S9PDI0YtKZCfS09CdVqTZBhpiwZDZD"
+const token = "EAAGtfX4zApMBAMMntfBTDrRpz4M3njhxkxWkLQdEd3P59kUgMyfgQNpp4mshbheTZAFHcHBSWrQEXXg32suu2eN10o64rL3D5ZBGWrZBLb1nKRB5zeiA199L5Hu0qbqKkZC7Dk5aAJFLFKyPuR5ThsK2jKtFTpfctNoF3YYhzQZDZD"
 
 function sendMessage(recipientId, message) {
     messageData = {
